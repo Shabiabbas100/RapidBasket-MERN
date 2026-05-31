@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  /* Defining the color variables */
+  --color-primary-200: #ffbf00;
+  --color-primary-light-100: #ffc929;
+  --color-secondary-200: #00b050;
+  --color-secondary-light-100: #0b1a78;
+}
+
+body{
+   background-color: slategray;
+}
+
+
+
+
+/* Usage in your HTML/Components:
+   <div class="bg-primary text-secondary-light">
+      This uses your theme colors!
+   </div> 
+*/
+
