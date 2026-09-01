@@ -11,7 +11,7 @@ import jwt from 'jsonwebtoken'
 
 export async function registerUserController(request,response){
     try {
-        const { name, email , password } = request.body
+        const { name, email, password } = request.body
 
         if(!name || !email || !password){
             return response.status(400).json({
@@ -22,6 +22,7 @@ export async function registerUserController(request,response){
         }
 
         const user = await UserModel.findOne({ email })
+        // console.log(user)
 
         if(user){
             return response.json({
@@ -54,7 +55,7 @@ export async function registerUserController(request,response){
             })
         })
 
-        return response.json({
+        return response.status(203).json({
             message : "User register successfully",
             error : false,
             success : true,

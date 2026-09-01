@@ -6,7 +6,7 @@ import cookieParser from 'cookie-parser'
 import morgan from 'morgan'
 import helmet from 'helmet'
 import connectDB from "./config/connectDB.js"
-import router from './routers/user.routes.js'
+import userRouter from './routers/user.routes.js'
 import uploadRouter from './routers/upload.route.js'
 connectDB()
 
@@ -25,7 +25,7 @@ app.use(helmet({
 
 app.get("/",(request,response)=>{
     ///server to client
-    response.json({
+    response.status(200).json({
         message : "Server is running ❤️ " + PORT
 })})
 
@@ -33,5 +33,5 @@ app.get("/",(request,response)=>{
 app.listen(PORT,()=>{
     console.log("Server is running😒",PORT)
 })
-app.use('/api/user',router)
+app.use('/api/user',userRouter)
 app.use("/api/file",uploadRouter)
