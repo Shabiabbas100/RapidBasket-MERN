@@ -17,7 +17,8 @@ const uploadImageCloudinary = async(image)=>{
             return resolve(uploadResult)
         }).end(buffer)
     })
-
+    
+    if(!uploadImage) console.log("cant upload")
     return uploadImage
 }
 
